@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import forecastReducer from './redux/forecast';
-import climateReducer from './redux/climate';
 import logger from 'redux-logger';
+import forecastReducer from './forecast';
+import climateReducer from './climate';
 
 const Store = configureStore({
   reducer: {

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
 const Form = ({ newLocation }) => {
@@ -5,9 +6,9 @@ const Form = ({ newLocation }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (city === '' || !city) return;
-   newLocation(city);
+    newLocation(city);
   };
 
   return (
@@ -21,7 +22,7 @@ const Form = ({ newLocation }) => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-          <button 
+          <button
             type="submit"
             className="btn btn-primary"
             id="search-btn"
