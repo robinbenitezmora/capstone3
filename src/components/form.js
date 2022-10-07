@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const Form = ({ newPlace }) => {
+const Form = ({ newLocation }) => {
   const [city, setCity] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
     if (city === '' || !city) return;
-    newPlace(city);
+   newLocation(city);
   };
 
   return (

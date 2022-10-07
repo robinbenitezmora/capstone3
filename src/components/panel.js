@@ -2,43 +2,59 @@ import React, { useState } from 'react';
 import Form from './form';
 import Board from './board';
 
-const WeatherPanel = () => {
-  let apiWeather = 'https://api.openweathermap.org/data/2.5/weather?&appid=56cdd6a9ec3b0492107abe99f711937a&lang=EN';
-  const apiCity = '&q=';
+const Panel = () => {
+  let urlWeather = 'https://api.openweathermap.org/data/2.5/weather?&appid=56cdd6a9ec3b0492107abe99f711937a&lang=EN';
+  const urlCity = '&q=';
 
-  let apiForecast = 'https://api.openweathermap.org/data/2.5/forecast?&appid=56cdd6a9ec3b0492107abe99f711937a&lang=EN';
+  let urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?&appid=56cdd6a9ec3b0492107abe99f711937a&lang=EN';
 
-  const [climate, setClimate] = useState({});
-  const [card, setCard] = useState({});
-  const [forecast, setForecast] = useState([]);
-  const [loading, setLoading] = useState(false);
+const [climate, setClimate] = useState({});
+const [forecast, setForecast] = useState({});
+const [loading, setLoading] = useState(false);
+const [card, setCard] = useState(false);
+const [location, setLocation] = useState('');
 
-  const place = async (city) => {
-    setLoading(true);
-    const response = await fetch(apiWeather + apiCity + city);
-    const data = await response.json();
-    const responseForecast = await fetch(apiForecast + apiCity + city);
-    const dataForecast = await responseForecast.json();
-    const forecast = dataForecast.list.filter((item) => item.dt_txt.includes('12:00:00'));
-    setClimate({
-      title: data.name,
-      subtitle: data.sys.country,
+const getLocation = async (city) => {
+  setLoading(true);
+  setLocation(city);
+  
+  urlWeather += urlCity + city;
+
+  await fetch(urlWeather)
+    .then((response) => {
+      if (!response.ok) {
+        throw Error('Could not fetch the data for that resource');
+      }
+      return response.json();
+    })
+    .then((weatherData) => {
+      setClimate(weatherData);
+      setLoading(false);
+      setCard(false);
     });
-    setCard({
-      the_temp: data.main.temp - 273.15,
-      weather_state_name: data.weather[0].description,
-      weather_state_abbr: data.weather[0].icon,
+
+  urlForecast += urlCity + city;
+
+  await fetch(urlForecast)
+    .then((response) => {
+      if (!response.ok) {
+        throw Error('Could not fetch the data for that resource');
+      }
+      return response.json();
+    })
+    .then((forecastData) => {
+      setForecast(forecastData);
+      setLoading(false);
+      setCard(true);
     });
-    setForecast(forecast);
-    setLoading(false);
-  };
+};
 
   return (
     <div className="panel">
-      <Form place={place} />
+      <Form newLocation={getLocation} />
       <Board card={card} loading={loading} climate={climate} forecast={forecast} />
     </div>
   );
 };
 
-export default WeatherPanel;
+export default Panel;

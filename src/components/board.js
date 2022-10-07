@@ -19,9 +19,9 @@ const Board = ({ card, loading, climate, forecast }) => {
     URL = 'https:openweathermap.org/img/w/';
     iconURL = 'URL + card.weather[0].icon + .png';
 
-    iconURL = `${URL + forecast.list[1].weather[0].icon}.png`;
-    iconURL = `${URL + forecast.list[2].weather[0].icon}.png`;
-    iconURL = `${URL + forecast.list[3].weather[0].icon}.png`;
+    iconURL = `${URL + forecast.list[1].climate[0].icon}.png`;
+    iconURL = `${URL + forecast.list[2].climate[0].icon}.png`;
+    iconURL = `${URL + forecast.list[3].climate[0].icon}.png`;
   }
 
   return (
@@ -32,17 +32,17 @@ const Board = ({ card, loading, climate, forecast }) => {
             <div className="board__card--header__city">
               <div className="board__card--header__city__name">
                 <h3 className="board__card--header__city__name__title">
-                  {weather.name}
+                  {climate.name}
                 </h3>
                 <p className="board__card--header__city__name__date">
                   {date} {year}
                 </p>
                 <h1 className="board__card--header__city__name__temp">
-                  {(weather.main.temp - 273.15).toFixed(1)}°C
+                  {(climate.main.temp - 273.15).toFixed(1)}°C
                 </h1>
                 <p className="board__card--header__city__name__desc">
-                  <img src={iconURL} alt="weather icon" />
-                  {weather.weather[0].description}
+                  <img src={iconURL} alt="climate icon" />
+                  {climate.climate[0].description}
                 </p>
                 <img
                   src="https://img.icons8.com/ios/50/000000/temperature.png"
@@ -54,17 +54,17 @@ const Board = ({ card, loading, climate, forecast }) => {
                   <div className="board__card--header__city__name__temp__minmax__min">
                     <p className="board__card--header__city__name__temp__minmax__min__title">
                       Max Temperature:
-                      {(weather.main.temp_max - 273.15).toFixed(1)}°C
+                      {(climate.main.temp_max - 273.15).toFixed(1)}°C
                     </p>
                     <p className="board__card--header__city__name__temp__minmax__min__title">
                       Min Temperature:
-                      {(weather.main.temp_min - 273.15).toFixed(1)}°C
+                      {(climate.main.temp_min - 273.15).toFixed(1)}°C
                     </p>
                     <p className="board__card--header__city__name__temp__minmax__min__title">
-                      Humidity: {weather.main.humidity}%
+                      Humidity: {climate.main.humidity}%
                     </p>
                     <p className="board__card--header__city__name__temp__minmax__min__title">
-                      Wind Speed: {weather.wind.speed}m/s
+                      Wind Speed: {climate.wind.speed}m/s
                     </p>
                   </div>
                   <hr />
@@ -73,8 +73,8 @@ const Board = ({ card, loading, climate, forecast }) => {
                     <div className="board__card--header__city__name__temp__minmax__max__day">
                       <p className="description">
                         Next 3 hours:
-                        <img src={iconURL} alt="weather icon" />
-                        {forecast.list[1].weather[0].description}
+                        <img src={iconURL} alt="climate icon" />
+                        {forecast.list[1].climate[0].description}
                       </p>
                       <p className="temp">
                         {(forecast.list[1].main.temp - 273.15).toFixed(1)}°C
@@ -83,8 +83,8 @@ const Board = ({ card, loading, climate, forecast }) => {
                     <div className="board__card--header__city__name__temp__minmax__max__day">
                       <p className="description">
                         Next 6 hours:
-                        <img src={iconURL} alt="weather icon" />
-                        {forecast.list[2].weather[0].description}
+                        <img src={iconURL} alt="climate icon" />
+                        {forecast.list[2].climate[0].description}
                       </p>
                       <p className="temp">
                         {(forecast.list[2].main.temp - 273.15).toFixed(1)}°C
