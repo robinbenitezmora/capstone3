@@ -1,7 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Spinner from './spinner';
 
-const Board = ({ card, loading, climate, forecast }) => {
+const Board = ({
+  card, loading, climate, forecast,
+}) => {
   const time = new Date();
   const day = time.getDay();
   const month = time.getMonth() + 1;
@@ -35,10 +38,13 @@ const Board = ({ card, loading, climate, forecast }) => {
                   {climate.name}
                 </h3>
                 <p className="board__card--header__city__name__date">
-                  {date} {year}
+                  {date}
+                  {' '}
+                  {year}
                 </p>
                 <h1 className="board__card--header__city__name__temp">
-                  {(climate.main.temp - 273.15).toFixed(1)}°C
+                  {(climate.main.temp - 273.15).toFixed(1)}
+                  °C
                 </h1>
                 <p className="board__card--header__city__name__desc">
                   <img src={iconURL} alt="climate icon" />
@@ -54,17 +60,25 @@ const Board = ({ card, loading, climate, forecast }) => {
                   <div className="board__card--header__city__name__temp__minmax__min">
                     <p className="board__card--header__city__name__temp__minmax__min__title">
                       Max Temperature:
-                      {(climate.main.temp_max - 273.15).toFixed(1)}°C
+                      {(climate.main.temp_max - 273.15).toFixed(1)}
+                      °C
                     </p>
                     <p className="board__card--header__city__name__temp__minmax__min__title">
                       Min Temperature:
-                      {(climate.main.temp_min - 273.15).toFixed(1)}°C
+                      {(climate.main.temp_min - 273.15).toFixed(1)}
+                      °C
                     </p>
                     <p className="board__card--header__city__name__temp__minmax__min__title">
-                      Humidity: {climate.main.humidity}%
+                      Humidity:
+                      {' '}
+                      {climate.main.humidity}
+                      %
                     </p>
                     <p className="board__card--header__city__name__temp__minmax__min__title">
-                      Wind Speed: {climate.wind.speed}m/s
+                      Wind Speed:
+                      {' '}
+                      {climate.wind.speed}
+                      m/s
                     </p>
                   </div>
                   <hr />
@@ -77,7 +91,8 @@ const Board = ({ card, loading, climate, forecast }) => {
                         {forecast.list[1].climate[0].description}
                       </p>
                       <p className="temp">
-                        {(forecast.list[1].main.temp - 273.15).toFixed(1)}°C
+                        {(forecast.list[1].main.temp - 273.15).toFixed(1)}
+                        °C
                       </p>
                     </div>
                     <div className="board__card--header__city__name__temp__minmax__max__day">
@@ -87,7 +102,8 @@ const Board = ({ card, loading, climate, forecast }) => {
                         {forecast.list[2].climate[0].description}
                       </p>
                       <p className="temp">
-                        {(forecast.list[2].main.temp - 273.15).toFixed(1)}°C
+                        {(forecast.list[2].main.temp - 273.15).toFixed(1)}
+                        °C
                       </p>
                     </div>
                   </div>
