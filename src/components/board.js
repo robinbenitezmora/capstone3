@@ -3,76 +3,104 @@ import Spinner from './spinner';
 
 const Board = ({ card, loading, climate, forecast }) => {
   const time = new Date();
-  const hour = time.getHours();
   const day = time.getDay();
   const month = time.getMonth() + 1;
+  const year = time.getFullYear();
   const date = `${day}/${month}`;
 
   let URL = '';
-  let icon = '';
+  let iconURL = '';
 
   if (loading) {
     return <Spinner />;
   }
 
   if (card) {
-    URL = `https://www.metaweather.com/static/img/weather/${card.weather_state_abbr}.svg`;
-    icon = <img src={URL} alt="weather icon" />;
+    URL = 'https:openweathermap.org/img/w/';
+    iconURL = 'URL + card.weather[0].icon + .png';
+
+    iconURL = `${URL + forecast.list[1].weather[0].icon}.png`;
+    iconURL = `${URL + forecast.list[2].weather[0].icon}.png`;
+    iconURL = `${URL + forecast.list[3].weather[0].icon}.png`;
   }
 
-  icon = <img src={URL} alt="weather icon" />;
   return (
     <div className="board">
-      <div className="board__header">
-        <h1 className="board__title">Weather App</h1>
-        <p className="board__date">{date}</p>
-      </div>
-      <div className="board__content">
-        <div className="board__content__left">
-          <div className="board__content__left__top">
-            <h2 className="board__content__left__top__title">
-              {climate.title}
-            </h2>
-            <p className="board__content__left__top__subtitle">
-              {climate.subtitle}
-            </p>
-          </div>
-          <div className="board__content__left__bottom">
-            <div className="board__content__left__bottom__temp">
-              <p className="board__content__left__bottom__temp__title">
-                {card.the_temp.toFixed(0)}
-                <sup>o</sup>
-              </p>
-              <p className="board__content__left__bottom__temp__subtitle">
-                {card.weather_state_name}
-              </p>
+      {card === true ? (
+        <div className="board__card">
+          <div className="board__card--header">
+            <div className="board__card--header__city">
+              <div className="board__card--header__city__name">
+                <h3 className="board__card--header__city__name__title">
+                  {weather.name}
+                </h3>
+                <p className="board__card--header__city__name__date">
+                  {date} {year}
+                </p>
+                <h1 className="board__card--header__city__name__temp">
+                  {(weather.main.temp - 273.15).toFixed(1)}°C
+                </h1>
+                <p className="board__card--header__city__name__desc">
+                  <img src={iconURL} alt="weather icon" />
+                  {weather.weather[0].description}
+                </p>
+                <img
+                  src="https://img.icons8.com/ios/50/000000/temperature.png"
+                  className="board__card--header__city__name__icon"
+                  alt="temperature icon"
+                />
+
+                <div className="board__card--header__city__name__temp__minmax">
+                  <div className="board__card--header__city__name__temp__minmax__min">
+                    <p className="board__card--header__city__name__temp__minmax__min__title">
+                      Max Temperature:
+                      {(weather.main.temp_max - 273.15).toFixed(1)}°C
+                    </p>
+                    <p className="board__card--header__city__name__temp__minmax__min__title">
+                      Min Temperature:
+                      {(weather.main.temp_min - 273.15).toFixed(1)}°C
+                    </p>
+                    <p className="board__card--header__city__name__temp__minmax__min__title">
+                      Humidity: {weather.main.humidity}%
+                    </p>
+                    <p className="board__card--header__city__name__temp__minmax__min__title">
+                      Wind Speed: {weather.wind.speed}m/s
+                    </p>
+                  </div>
+                  <hr />
+
+                  <div className="board__card--header__city__name__temp__minmax__max">
+                    <div className="board__card--header__city__name__temp__minmax__max__day">
+                      <p className="description">
+                        Next 3 hours:
+                        <img src={iconURL} alt="weather icon" />
+                        {forecast.list[1].weather[0].description}
+                      </p>
+                      <p className="temp">
+                        {(forecast.list[1].main.temp - 273.15).toFixed(1)}°C
+                      </p>
+                    </div>
+                    <div className="board__card--header__city__name__temp__minmax__max__day">
+                      <p className="description">
+                        Next 6 hours:
+                        <img src={iconURL} alt="weather icon" />
+                        {forecast.list[2].weather[0].description}
+                      </p>
+                      <p className="temp">
+                        {(forecast.list[2].main.temp - 273.15).toFixed(1)}°C
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="board__content__left__bottom__icon">{icon}</div>
           </div>
         </div>
-        <div className="board__content__right">
-          <div className="board__content__right__top">
-            <p className="board__content__right__top__title">Today</p>
-            <p className="board__content__right__top__subtitle">
-              {forecast[0].weather_state_name}
-            </p>
-          </div>
-          <div className="board__content__right__bottom">
-            <div className="board__content__right__bottom__temp">
-              <p className="board__content__right__bottom__temp__title">
-                {forecast[0].the_temp.toFixed(0)}
-                <sup>o</sup>
-              </p>
-              <p className="board__content__right__bottom__temp__subtitle">
-                {forecast[0].weather_state_name}
-              </p>
-            </div>
-            <div className="board__content__right__bottom__icon">
-              <img src={URL} alt="weather icon" />
-            </div>
-          </div>
-        </div>
-      </div>
+      ) : (
+        <h2 className="board__card--header__city__name__title">
+          Please enter a city name
+        </h2>
+      )}
     </div>
   );
 };
