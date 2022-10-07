@@ -1,6 +1,7 @@
 import ReactPlayer from 'react-player/youtube';
 import Navbar from './components/navbar';
 import WeatherPanel from './components/panel';
+import './App.css';
 
 const App = () => {
   return (
