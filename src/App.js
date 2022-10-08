@@ -1,18 +1,15 @@
-import ReactPlayer from 'react-player/youtube';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Panel from './components/panel';
+import './App.css';
 
 const App = () => (
-  <div className="App">
+  <Router>
     <Navbar />
-    <Panel />
-    <ReactPlayer
-      url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-      autoPlay
-      controls
-      style={{ margin: 'auto', height: '1.5rem', width: '50%' }}
-    />
-  </div>
+    <Routes>
+      <Route path="/" element={<Panel />} />
+    </Routes>
+  </Router>
 );
 
 export default App;
