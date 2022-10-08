@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 import Panel from '../components/panel';
 import '@testing-library/jest-dom';
 
