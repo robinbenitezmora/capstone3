@@ -11,7 +11,109 @@ body {
   background: #f1f1f1;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background: #f1f1f1;
+  padding: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: auto;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
 .form-group {
-  position: relative;
-  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 7rem;
+  gap: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.btn {
+  width: 40%;
+  height: 3rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgb(234, 55, 55);
+}
+
+.btn-primary {
+  background: hsl(242deg 88% 56%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 1rem;
+}
+
+.board__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.board__card--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  background: #f1f1f1;
+  border-radius: 0.5rem;
+}
+
+.board__card--header__city {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.board__title {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
 }

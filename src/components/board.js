@@ -49,7 +49,7 @@ const Board = ({
                   {weather.weather[0].description}
                 </p>
                 <img
-                  src="https://images.unsplash.com/photo-1519680773-3b1b1b1b1b1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                  src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/09d.png"
                   className="board__card--header__city__name__img"
                   alt="city"
                 />

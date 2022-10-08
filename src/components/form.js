@@ -12,7 +12,7 @@ const Form = ({ newLocation }) => {
   };
 
   return (
-    <div className="container">
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input
