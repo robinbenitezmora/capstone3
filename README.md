@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Capstone Project (Weather App)
 
-## Available Scripts
 
-In the project directory, you can run:
+>
+> This is a capstone project for the Microverse JavaScript module. The project is a weather app that allows users to search for the weather in any city in the world. The app uses the OpenWeatherMap API to fetch the weather data. The app is built with JavaScript, HTML, and CSS.
+## Built With
 
-### `npm start`
+- React
+- Redux
+- JavaScript
+- HTML
+- CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 💻 Live demo
+- [Live Demo Link](https://earnest-gnome-2c8ab0.netlify.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+If you want to clone this project:
+- Go to GitHub repository
+- Click on the green button that say 'Code'
+- Copy the SSH link
+- On your local machine, type the command git clone and paste the SSH link
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Prerequisites
+- Code editor
+- Knowledge in HTML
+- Knowledge in CSS
+- Knowledge in JavaScript
+- Knowledge in React
+- Knowledge in Redux
+- Handle on local repository Git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Setup
+- Clone the repository
+- Change directory into the project folder
+- Install dependencies
+- Open project with text editor to view changes
+- Run the code using [live server](https://www.google.com/search?client=safari&rls=en&q=live+server&ie=UTF-8&oe=UTF-8)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Install
+Clone this repository (you must have [Git Installed](https://github.com/git-guides/install-git))
 
-### `npm run eject`
+`git clone git@github.com:robinbenitezmora/capstone3.git`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Then, move to the newly created folder `capstone3` using this command
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`cd capstone3`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Then, install dependencies using this command
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Then, install dependencies using this command
 
-## Learn More
+To open the project in Visual Studio Code type the following command inside the _books_with_es6_ folder
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`code .`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In order to visualize the project in your browser either open the index.html file directly from the file explorer or consider using a [live server for development ](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-### Code Splitting
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Robin Benitez Mora**
 
-### Analyzing the Bundle Size
+- GitHub: [@robinbenitezmora](https://github.com/robinbenitezmora)
+- Twitter: [@Mecanico_Robin](https://twitter.com/mecanico_robin)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/robin-benitez-mora-manizales)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
+-I thank Microverse for its documentation, and my mentor, David Verde for his support, guidance and patient by sharing his large knowledge.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.
