@@ -7,8 +7,28 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lato', sans-serif;
   background: #f1f1f1;
+}
+
+nav {
+  height: 5rem;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+  background-color: #cd4b60;
+}
+
+.brand-logo {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 .container {
@@ -19,6 +39,9 @@ body {
   height: auto;
   background: #f1f1f1;
   padding: 1rem;
+  margin-bottom: 2rem;
+  position: absolute;
+  top: 5rem;
 }
 
 .form {
@@ -46,6 +69,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   outline: none;
+  font-size: 1.4rem;
 }
 
 .btn {
@@ -79,6 +103,7 @@ body {
   width: 100%;
   height: auto;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .board__card {
@@ -105,8 +130,8 @@ body {
   border-radius: 0.5rem;
 }
 
-.board__card--header__city {
-  font-size: 1.5rem;
+.board__card--header__city__name__title {
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
@@ -116,4 +141,79 @@ body {
   padding: 1rem 0;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.board__card--header__city__forecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    height: 6rem;
+  }
+
+  .brand-logo {
+    font-size: 3rem;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  .board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .board__card--header__city__name {
+    padding: 3rem;
+  }
+
+  .board__card--header__city__name__title,
+  .board__card--header__city__name__temp {
+    font-size: 3rem;
+  }
+
+  .board__card--header__city__name__date {
+    font-size: 2.2rem;
+  }
+
+  .board__card--header__city__forecast {
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  .board__card--header__city__name__desc {
+    font-size: 2rem;
+  }
+
+  .board__card--header__city__name__img {
+    transform: scale(2);
+    margin: 3rem;
+  }
 }

@@ -6,10 +6,13 @@ const Board = ({
   showData, loading, weather, forecast,
 }) => {
   const time = new Date();
-  const day = time.getDay();
+  const minutes = time.getMinutes();
+  const hour = time.getHours();
+  const day = time.getDate();
   const month = time.getMonth() + 1;
   const year = time.getFullYear();
-  const date = `${day}/${month}/${year}`;
+  const date = `${day}/${month}/${year}      
+  ${hour}:${minutes}`;
 
   let URL = '';
   let iconURL = '';
@@ -59,26 +62,31 @@ const Board = ({
                 <div className="board__card--header__city__forecast__day">
                   <p className="board__card--header__city__forecast__day__date">
                     Max Temperature:
+                    {'  '}
                     {(weather.main.temp_max - 273.15).toFixed(1)}
                     °C
                   </p>
                   <p className="board__card--header__city__forecast__day__date">
                     Min Temperature:
+                    {'  '}
                     {(weather.main.temp_min - 273.15).toFixed(1)}
                     °C
                   </p>
                   <p className="board__card--header__city__forecast__day__date">
                     Thermal Sensation:
+                    {'  '}
                     {(weather.main.feels_like - 273.15).toFixed(1)}
                     °C
                   </p>
                   <p className="board__card--header__city__forecast__day__date">
                     Humidity:
+                    {'  '}
                     {weather.main.humidity}
                     %
                   </p>
                   <p className="board__card--header__city__forecast__day__date">
                     Wind Speed:
+                    {'  '}
                     {weather.wind.speed}
                     m/s
                   </p>

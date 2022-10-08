@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  <nav className="navbar">
-    <div className="container">
-      <h2 className="navbar-brand">Weather Info</h2>
+const Navbar = () => (
+  <nav>
+    <div className="nav-wrapper">
+      <Link to="/" className="brand-logo">
+        Current Weather and Forecast
+      </Link>
     </div>
-  </nav>;
-};
+  </nav>
+);
 
 export default Navbar;
