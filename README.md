@@ -14,7 +14,7 @@
 - CSS
 
 ## 💻 Live demo
-- [Live Demo Link](https://earnest-gnome-2c8ab0.netlify.app/)
+- [Live Demo Link](https://moonlit-queijadas-da638a.netlify.app/)
 
 ## Getting Started
 
