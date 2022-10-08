@@ -25,7 +25,7 @@ const Form = ({ newLocation }) => {
           <button
             type="submit"
             className="btn btn-primary"
-            id="search-btn"
+            data-testid="search-btn"
           >
             Search
           </button>
