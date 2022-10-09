@@ -90,6 +90,18 @@ const Board = ({
                     {weather.wind.speed}
                     m/s
                   </p>
+                  <p className="board__card--header__city__forecast__day__date">
+                    Pressure:
+                    {'  '}
+                    {weather.main.pressure}
+                    hPa
+                  </p>
+                  <p className="board__card--header__city__forecast__day__date">
+                    Visibility:
+                    {'  '}
+                    {weather.visibility}
+                    m
+                  </p>
                 </div>
                 <hr />
 
